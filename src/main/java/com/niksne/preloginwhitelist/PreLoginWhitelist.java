@@ -2,6 +2,7 @@ package com.niksne.preloginwhitelist;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,7 +18,7 @@ public final class PreLoginWhitelist extends JavaPlugin implements Listener {
         saveDefaultConfig();
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     void onPlayerPreLogin(AsyncPlayerPreLoginEvent e) {
         getServer().reloadWhitelist();
         String n = e.getName();
