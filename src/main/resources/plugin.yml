@@ -1,0 +1,7 @@
+name: PreLoginWhitelist
+version: '${version}'
+main: com.niksne.preloginwhitelist.PreLoginWhitelist
+api-version: 1.13
+author: NikSne
+description: Initially, the whitelist check occurs when the player connects to the server. This plugin does a whitelist check when the first authorization packages arrive, which allows you to do it much earlier!
+website: https://modrinth.com/plugin/prelogin-whitelist
