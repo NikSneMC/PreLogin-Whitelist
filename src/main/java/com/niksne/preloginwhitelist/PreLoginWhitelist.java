@@ -21,9 +21,7 @@ public final class PreLoginWhitelist extends JavaPlugin implements Listener {
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     void onPlayerPreLogin(AsyncPlayerPreLoginEvent e) {
         getServer().reloadWhitelist();
-        String n = e.getName();
-        UUID u = e.getUniqueId();
-        for (OfflinePlayer p: getServer().getWhitelistedPlayers()) { if (p.getUniqueId().equals(u) || p.getName().equals(n)) { return; } }
+        for (OfflinePlayer p: getServer().getWhitelistedPlayers()) { if (p.getUniqueId().equals(e.getUniqueId()) || p.getName().equals(e.getName())) { return; } }
         reloadConfig();
         e.disallow(AsyncPlayerPreLoginEvent.Result.KICK_WHITELIST, getConfig().getString("message"));
     }
