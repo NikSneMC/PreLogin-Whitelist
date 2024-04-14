@@ -1,4 +1,4 @@
-package com.niksne.preloginwhitelist;
+package ru.niksne.preloginwhitelist;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.EventHandler;
